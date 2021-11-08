@@ -5,7 +5,10 @@
 #SBATCH --time=24:00:00   # walltime
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
-#SBATCH --cpus-per-task=1       # number of processors per task
+<<<<<<< HEAD
+=======
+#SBATCH --cpus-per-task=1	# number of processors per task
+>>>>>>> upstream/main
 #SBATCH -J "rplhps"   # job name
 
 ## /SBATCH -p general # partition (queue)
@@ -18,7 +21,9 @@ source ~/.bashrc
 envarg=`/data/src/PyHipp/envlist.py`
 conda activate $envarg
 
-
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/main
 python -u -c "import PyHipp as pyh; \
 import time; \
 pyh.RPLHighPass(saveLevel=1); \
@@ -28,7 +33,8 @@ from PyHipp import export_mountain_cells; \
 export_mountain_cells.export_mountain_cells(); \
 print(time.localtime());"
 
-
+<<<<<<< HEAD
+=======
 conda deactivate 
 /data/src/PyHipp/envlist.py $envarg
-
+>>>>>>> upstream/main
